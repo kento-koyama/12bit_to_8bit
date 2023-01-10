@@ -19,7 +19,7 @@ if uploaded_file is not None:
     image = image.astype(np.float32)
 
     # gamma補正の指数を入力する
-    gamma = st.slider('Gamma', 0.010, 5.0, 0.040, 0.001)
+    gamma = st.slider('Gamma', 0.010, 0.09, 0.040, 0.001)
 
     # gamma補正を行う
     image = np.power(image / np.max(image), gamma) * np.max(image)
