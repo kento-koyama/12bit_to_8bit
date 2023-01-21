@@ -17,12 +17,15 @@ if uploaded_file is not None:
 
     # 画像をfloat32型に変換する
     image = image.astype(np.float32)
-
+    
+    c = 255 / np.log(1 + np.max(image))
+    img_log = c * np.log(1 + image)
+    
     # gamma補正の指数を入力する
     gamma = st.slider('Gamma', 0.010, 0.09, 0.040, 0.001)
 
     # gamma補正を行う
-    image = np.power(image / np.max(image), gamma) * np.max(image)
+    image = np.power(img_log / np.max(image), gamma) * np.max(image)
 
     # 画像をuint8型に変換する
     image = image.astype(np.uint8)
