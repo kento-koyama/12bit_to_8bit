@@ -22,7 +22,7 @@ if uploaded_file is not None:
 
     
     # gamma補正の指数を入力する
-    gamma = st.slider('Gamma', 0.010, 0.09, 0.040, 0.001)
+    gamma = st.slider('Gamma', 0.50, 5.0, 1.0, 0.5)
 
     img_log = np.power(img_log / img_log[0].max(), gamma) * img_log[0].max()
 
