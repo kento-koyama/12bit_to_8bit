@@ -31,4 +31,4 @@ if uploaded_file is not None:
     #plt.show()
 
     # 画像を表示する
-    st.image(im)
+    st.image(img_log/img_log[0].max()*255)
