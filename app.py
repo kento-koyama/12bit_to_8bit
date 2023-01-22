@@ -1,19 +1,3 @@
-
-# Open the image
-im = Image.open("12bit_image.tif")
-
-# Convert the image to numpy array
-img = np.array(im)
-img_log = np.array(img)
-gamma = 5
-
-img_log = np.power(img_log / img_log[0].max(), gamma) * img_log[0].max()
-
-im = Image.fromarray(img_log/img_log[0].max()*255)
-plt.imshow(im)
-plt.show()
-
-
 import streamlit as st
 import cv2
 import numpy as np
