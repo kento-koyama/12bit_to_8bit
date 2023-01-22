@@ -26,9 +26,9 @@ if uploaded_file is not None:
 
     img_log = np.power(img_log / img_log[0].max(), gamma) * img_log[0].max()
 
-    im = Image.fromarray(img_log/img_log[0].max()*255)
+    im = Image.fromarray((img_log/img_log[0].max()*255).astype(np.uint8))
     #plt.imshow(im)
     #plt.show()
 
     # 画像を表示する
-    st.image(np.array(img_log/img_log[0].max()*255))
+    st.image(np.array(im))
