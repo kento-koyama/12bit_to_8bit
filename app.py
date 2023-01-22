@@ -31,4 +31,4 @@ if uploaded_file is not None:
     #plt.show()
 
     # 画像を表示する
-    st.image(im, width=500)
+    st.image(im)
